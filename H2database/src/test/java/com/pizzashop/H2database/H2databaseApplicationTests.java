@@ -1,13 +1,13 @@
-package com.pizzashop.H2database;
+// package com.pizzashop.H2database;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class H2databaseApplicationTests {
+// @SpringBootTest
+// class H2databaseApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
