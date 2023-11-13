@@ -8,18 +8,18 @@ public class Customer {
 
     @Id
     private int id;
-    private String first_name;
-    private String last_name;
-    private int phone_number;
+    private String firstName;
+    private String lastName;
+    private int phoneNumber;
 
     // CONSTRUCTOR
     public Customer() {
     }
 
-    public Customer(String first_name, String last_name, int phone_number) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.phone_number = phone_number;
+    public Customer(String firstName, String lastName, int phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
     }
 
     // GETTERS and SETTERS
@@ -32,36 +32,36 @@ public class Customer {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public int getPhone_number() {
-        return phone_number;
+    public int getphoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(int phone_number) {
-        this.phone_number = phone_number;
+    public void setphoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     // METHODS
 
     @Override
     public String toString() {
-        return "Customer [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", phone_number="
-                + phone_number + "]";
+        return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="
+                + phoneNumber + "]";
     }
 
 }
