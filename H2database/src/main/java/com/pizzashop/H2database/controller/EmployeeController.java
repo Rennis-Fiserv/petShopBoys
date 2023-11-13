@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pizzashop.H2database.model.Product;
-import com.pizzashop.H2database.service.ProductService;
+import com.pizzashop.H2database.model.Employee;
+import com.pizzashop.H2database.service.EmployeeService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -23,51 +23,52 @@ import reactor.core.publisher.Mono;
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
-public class ProductController {
+public class EmployeeController {
     @Autowired
-    ProductService productService;
+    EmployeeService employeeService;
 
-    @GetMapping("/products")
+    @GetMapping("/employees")
     @ResponseStatus(HttpStatus.OK)
-    public Flux<Product> getAllProducts(@RequestParam(required = false) String name) {
+    public Flux<Employee> getAllProducts(@RequestParam(required = false) String name) {
         if (name == null) {
-            return productService.findAll();
+            return employeeService.findAll();
         } else {
-            return productService.findByName(name);
+            return employeeService.findByName(name);
         }
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Product> getProductById(@PathVariable("id") int id) {
-        return productService.findById(id);
+    public Mono<Employee> getProductById(@PathVariable("id") int id) {
+        return employeeService.findById(id);
     }
 
-    @PostMapping("/products")
+    @PostMapping("/employees")
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Product> createProduct(@RequestBody Product product) {
-        return productService.save(
-                new Product(
-                        product.getName(),
-                        product.getPrice(),
-                        product.getServing()));
+    public Mono<Employee> createEmployee(@RequestBody Employee employee) {
+        return employeeService.save(
+                new Employee(
+                        employee.getFirst_name(),
+                        employee.getLast_name(),
+                        employee.getSalary(),
+                        employee.getEmployee_role()));
     }
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Product> updateProduct(@PathVariable("id") int id, @RequestBody Product product) {
-        return productService.update(id, product);
+    public Mono<Employee> updateProduct(@PathVariable("id") int id, @RequestBody Employee employee) {
+        return employeeService.update(id, employee);
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> deleteProduct(@PathVariable("id") int id) {
-        return productService.deleteById(id);
+        return employeeService.deleteById(id);
     }
 
-    @DeleteMapping("/products")
+    @DeleteMapping("/employees")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> deleteAllProducts() {
-        return productService.deleteAll();
+        return employeeService.deleteAll();
     }
 }
