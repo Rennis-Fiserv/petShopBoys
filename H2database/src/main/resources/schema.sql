@@ -32,3 +32,15 @@ INSERT INTO zip VALUES (55502, 'Moorhead', 'Minnesota');
 INSERT INTO zip VALUES (55503, 'Wayzata', 'Minnesota');
 INSERT INTO zip VALUES (55504, 'New Ulm', 'Minnesota');
 
+
+
+CREATE TABLE if NOT EXISTS CUSTOMER_ORDER(
+    id INT NOT NULL AUTO_INCREMENT,
+    zip INT,
+    employee_id INT,
+    customer_id INT,
+    order_placed DATE,
+    order_completed DATE,
+    order_details_id INT,
+    street_address VARCHAR(45),
+    PRIMARY KEY (id));
