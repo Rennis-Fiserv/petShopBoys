@@ -29,7 +29,7 @@ public class CustomerController {
 
     @GetMapping("/customers")
     @ResponseStatus(HttpStatus.OK)
-    public Flux<Customer> getAllProducts(@RequestParam(required = false) String name) {
+    public Flux<Customer> getAllCustomers(@RequestParam(required = false) String name) {
         if (name == null) {
             return CustomerService.findAll();
         } else {
@@ -39,7 +39,7 @@ public class CustomerController {
 
     @GetMapping("/customers/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Customer> getProductById(@PathVariable("id") int id) {
+    public Mono<Customer> getCustomerById(@PathVariable("id") int id) {
         return CustomerService.findById(id);
     }
 
@@ -48,26 +48,26 @@ public class CustomerController {
     public Mono<Customer> createCustomer(@RequestBody Customer Customer) {
         return CustomerService.save(
                 new Customer(
-                        Customer.getFirst_name(),
-                        Customer.getLast_name(),
-                        Customer.getPhone_number()));
+                        Customer.getFirstName(),
+                        Customer.getlastName(),
+                        Customer.getphoneNumber()));
     }
 
     @PutMapping("/customers/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Customer> updateProduct(@PathVariable("id") int id, @RequestBody Customer Customer) {
+    public Mono<Customer> updateCustomer(@PathVariable("id") int id, @RequestBody Customer Customer) {
         return CustomerService.update(id, Customer);
     }
 
     @DeleteMapping("/customers/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteProduct(@PathVariable("id") int id) {
+    public Mono<Void> deleteCustomer(@PathVariable("id") int id) {
         return CustomerService.deleteById(id);
     }
 
     @DeleteMapping("/customers")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteAllProducts() {
+    public Mono<Void> deleteAllCustomers() {
         return CustomerService.deleteAll();
     }
 }

@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 import com.pizzashop.H2database.model.Customer;
 
 public interface CustomerRepository extends R2dbcRepository<Customer, Integer> {
-    Flux<Customer> findByName(String name);
+    Flux<Customer> findByfirstName(String firstName);
 
-    Flux<Customer> findByPublished(boolean isPublished);
+    // Flux<Customer> findByPublished(boolean isPublished);
 }

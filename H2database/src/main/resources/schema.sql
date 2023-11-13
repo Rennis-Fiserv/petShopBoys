@@ -1,3 +1,4 @@
+
 CREATE TABLE if NOT EXISTS PRODUCT(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(45),
@@ -19,3 +20,15 @@ CREATE TABLE if NOT EXISTS EMPLOYEE(
     last_name VARCHAR(45),
     phone_number BIGINT,
     PRIMARY KEY (id));
+
+CREATE TABLE if NOT EXISTS zip(
+    zip INT NOT NULL AUTO_INCREMENT,
+    city VARCHAR(45),
+    state VARCHAR(45),
+    PRIMARY KEY (zip));
+
+INSERT INTO zip VALUES (55501, 'Minnetonka', 'Minnesota');
+INSERT INTO zip VALUES (55502, 'Moorhead', 'Minnesota');
+INSERT INTO zip VALUES (55503, 'Wayzata', 'Minnesota');
+INSERT INTO zip VALUES (55504, 'New Ulm', 'Minnesota');
+
