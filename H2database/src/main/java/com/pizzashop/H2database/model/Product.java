@@ -1,24 +1,28 @@
 package com.pizzashop.H2database.model;
 
 import org.springframework.data.annotation.Id;
+
 public class Product {
 
-//    FIELDS
-//    @id means id will auto generate
+    // FIELDS
+    // @id means id will auto generate
     @Id
     private int id;
     private String name;
     private double price;
     private String serving;
-//    CONSTRUCTOR
-    public Product(){}
-    public Product(String name, double price, String serving){
+
+    // CONSTRUCTOR
+    public Product() {
+    }
+
+    public Product(String name, double price, String serving) {
         this.name = name;
         this.price = price;
         this.serving = serving;
     }
 
-//    GETTERS and SETTERS
+    // GETTERS and SETTERS
 
     public int getId() {
         return id;
@@ -52,15 +56,14 @@ public class Product {
         this.serving = serving;
     }
 
-//   METHODS
-
+    // METHODS
     @Override
     public String toString() {
-        return "Product{" +
-                "product_id=" + id +
-                ", name='" + name + '\'' +
+        return "Product" +
+                "[id=" + id +
+                ", name=" + name +
                 ", price=" + price +
-                ", serving='" + serving + '\'' +
-                '}';
+                ", serving=" + serving +
+                "]";
     }
 }
