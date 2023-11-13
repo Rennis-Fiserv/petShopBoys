@@ -29,17 +29,17 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     @ResponseStatus(HttpStatus.OK)
-    public Flux<Employee> getAllProducts(@RequestParam(required = false) String name) {
+    public Flux<Employee> getAllEmployees(@RequestParam(required = false) String name) {
         if (name == null) {
             return employeeService.findAll();
         } else {
-            return employeeService.findByName(name);
+            return employeeService.findByfirstName(name);
         }
     }
 
     @GetMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Employee> getProductById(@PathVariable("id") int id) {
+    public Mono<Employee> getEmployeeById(@PathVariable("id") int id) {
         return employeeService.findById(id);
     }
 
@@ -48,27 +48,27 @@ public class EmployeeController {
     public Mono<Employee> createEmployee(@RequestBody Employee employee) {
         return employeeService.save(
                 new Employee(
-                        employee.getFirst_name(),
-                        employee.getLast_name(),
+                        employee.getfirstName(),
+                        employee.getLastName(),
                         employee.getSalary(),
-                        employee.getEmployee_role()));
+                        employee.getEmployeeRole()));
     }
 
     @PutMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<Employee> updateProduct(@PathVariable("id") int id, @RequestBody Employee employee) {
+    public Mono<Employee> updateEmployee(@PathVariable("id") int id, @RequestBody Employee employee) {
         return employeeService.update(id, employee);
     }
 
     @DeleteMapping("/employees/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteProduct(@PathVariable("id") int id) {
+    public Mono<Void> deleteEmployee(@PathVariable("id") int id) {
         return employeeService.deleteById(id);
     }
 
     @DeleteMapping("/employees")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteAllProducts() {
+    public Mono<Void> deleteAllEmployees() {
         return employeeService.deleteAll();
     }
 }

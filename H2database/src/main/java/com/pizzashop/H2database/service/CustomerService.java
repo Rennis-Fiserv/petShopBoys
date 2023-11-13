@@ -20,16 +20,16 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    public Flux<Customer> findByName(String name) {
-        return customerRepository.findByName(name);
+    public Flux<Customer> findByName(String first_name) {
+        return customerRepository.findByfirstName(first_name);
     }
 
     public Mono<Customer> findById(int id) {
         return customerRepository.findById(id);
     }
 
-    public Mono<Customer> save(Customer product) {
-        return customerRepository.save(product);
+    public Mono<Customer> save(Customer custmoer) {
+        return customerRepository.save(custmoer);
     }
 
     public Mono<Customer> update(int id, Customer Customer) {

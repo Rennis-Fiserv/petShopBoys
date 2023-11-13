@@ -20,16 +20,16 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
-    public Flux<Employee> findByName(String name) {
-        return employeeRepository.findByName(name);
+    public Flux<Employee> findByfirstName(String firstName) {
+        return employeeRepository.findByfirstName(firstName);
     }
 
     public Mono<Employee> findById(int id) {
         return employeeRepository.findById(id);
     }
 
-    public Mono<Employee> save(Employee product) {
-        return employeeRepository.save(product);
+    public Mono<Employee> save(Employee employee) {
+        return employeeRepository.save(employee);
     }
 
     public Mono<Employee> update(int id, Employee employee) {

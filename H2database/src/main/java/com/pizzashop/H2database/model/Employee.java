@@ -8,20 +8,20 @@ public class Employee {
 
     @Id
     private int id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private double salary;
-    private String employee_role;
+    private String employeeRole;
 
     // CONSTRUCTOR
     public Employee() {
     }
 
-    public Employee(String first_name, String last_name, double salary, String employee_role) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Employee(String firstName, String last_name, double salary, String employeeRole) {
+        this.firstName = firstName;
+        this.lastName = last_name;
         this.salary = salary;
-        this.employee_role = employee_role;
+        this.employeeRole = employeeRole;
     }
 
     // GETTERS and SETTERS
@@ -34,20 +34,20 @@ public class Employee {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getfirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
     }
 
     public double getSalary() {
@@ -58,20 +58,20 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getEmployee_role() {
-        return employee_role;
+    public String getEmployeeRole() {
+        return employeeRole;
     }
 
-    public void setEmployee_role(String employee_role) {
-        this.employee_role = employee_role;
+    public void setEmployeeRole(String employeeRole) {
+        this.employeeRole = employeeRole;
     }
 
     // METHODS
 
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", salary=" + salary
-                + ", employee_role=" + employee_role + "]";
+        return "Employee [id=" + id + ", firstName=" + firstName + ", last_name=" + lastName + ", salary=" + salary
+                + ", employeeRole=" + employeeRole + "]";
     }
 
 }
